@@ -1,5 +1,9 @@
+<script setup>
+
+</script>
+
 <template>
-  <div class="flex items-center justify-center h-screen bg-gray-50">
+  <div class="flex items-center justify-center bg-gray-50">
     <div>
       <h1 class="mb-6 text-4xl">Flowbite + Nuxt.js + Tailwind CSS Starter</h1>
       <div

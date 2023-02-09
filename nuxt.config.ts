@@ -1,5 +1,8 @@
 import { fileURLToPath } from 'node:url'
 export default defineNuxtConfig({
+    app: {
+
+    },
     modules: [
         '@nuxtjs/tailwindcss'
     ],
