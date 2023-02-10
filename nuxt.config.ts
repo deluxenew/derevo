@@ -6,7 +6,7 @@ export default defineNuxtConfig({
         '@nuxtjs/tailwindcss',
         ['@pinia/nuxt', {
             autoImports: [
-                'defineStore', 'acceptHMRUpdate'
+                'defineStore', 'acceptHMRUpdate', "mapGetters", "mapActions"
             ],
         },
         ],

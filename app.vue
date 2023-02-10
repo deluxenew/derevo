@@ -1,20 +1,28 @@
 <template>
   <NuxtLayout>
-    <NuxtPage :transition="{ name: 'page', mode: 'out-in', onBeforeLeave: (el) =>  onBeforeLeave(el), onAfterEnter: (el) => onAfterEnter(el) }"/>
+    <NuxtPage :isTransitionPage="IS_TRANSITION_PAGE" :transition="transition"/>
   </NuxtLayout>
 </template>
 <script>
 export default {
+  computed: {
+    ...mapGetters(useMain, ["IS_TRANSITION_PAGE"]),
+    transition() {
+      return {
+        name: 'page',
+        mode: 'out-in',
+        onBeforeLeave: (el) => this.onBeforeLeave(el),
+        onBeforeEnter: (el) => this.onAfterEnter(el)
+      }
+    }
+  },
   methods: {
+    ...mapActions(useMain, ["SET_TRANSITION_PAGE"]),
     onBeforeLeave(el) {
-      console.log( el)
-      useMain().SET_TRANSITION_PAGE(true)
-      console.log( Date.now(), '1')
+      this.SET_TRANSITION_PAGE(true)
     },
     onAfterEnter(el) {
-      console.log( el)
-      console.log(Date.now(), '2')
-      useMain().SET_TRANSITION_PAGE(false)
+      this.SET_TRANSITION_PAGE(false)
     }
   }
 }

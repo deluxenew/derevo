@@ -2,7 +2,7 @@
 import {onMounted} from 'vue'
 import {Carousel} from 'flowbite'
 const initCarousel = () => {
-  console.log(12312)
+  console.log('initCarousel')
   const items = [
     {
       position: 0,
@@ -73,15 +73,21 @@ const initCarousel = () => {
     });
   }
 }
-watch(() => useMain().IS_TRANSITION_PAGE, (v) => {
+
+const props = defineProps({
+  isTransitionPage: false
+})
+
+watch(() => props.isTransitionPage, (v) => {
   if (v) return
   initCarousel()
 })
 
 onMounted(() => {
-  if (useMain().IS_TRANSITION_PAGE) return
+  if (props.isTransitionPage) return
   initCarousel()
 })
+
 </script>
 
 <template>
