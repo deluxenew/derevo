@@ -2,7 +2,8 @@
 import {onMounted} from 'vue'
 import {Carousel} from 'flowbite'
 
-onMounted(() => {
+onMounted(async () => {
+  await new Promise((resolve) => setTimeout(() => resolve(),200))
   const items = [
     {
       position: 0,

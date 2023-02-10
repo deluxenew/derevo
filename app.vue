@@ -1,9 +1,17 @@
 <template>
   <NuxtLayout>
-    <NuxtPage :transition="{ name: 'page', mode: 'out-in'}"/>
+    <NuxtPage :transition="{ name: 'page', mode: 'out-in', onAfterLeave: () => onAfterLeave() }"/>
   </NuxtLayout>
 </template>
-
+<script>
+export default {
+  methods: {
+    onAfterLeave() {
+      console.log(123123)
+    }
+  }
+}
+</script>
 <style>
 .page-enter-active,
 .page-leave-active {

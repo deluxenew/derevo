@@ -4,7 +4,7 @@ import HeaderTemplate from "~/widgets/HeaderTemplate.vue";
 </script>
 
 <template>
-  <div class="flex flex-col">
+  <div>
     <HeaderTemplate />
     <slot/>
   </div>

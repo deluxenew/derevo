@@ -1,10 +1,15 @@
-import { fileURLToPath } from 'node:url'
-export default defineNuxtConfig({
-    app: {
+import {fileURLToPath} from 'node:url'
 
-    },
+export default defineNuxtConfig({
+    app: {},
     modules: [
-        '@nuxtjs/tailwindcss'
+        '@nuxtjs/tailwindcss',
+        ['@pinia/nuxt', {
+            autoImports: [
+                'defineStore',
+            ],
+        },
+        ],
     ],
     tailwindcss: {
         cssPath: '~/assets/css/input.css'
