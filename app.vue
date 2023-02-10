@@ -1,13 +1,20 @@
 <template>
   <NuxtLayout>
-    <NuxtPage :transition="{ name: 'page', mode: 'out-in', onAfterLeave: () => onAfterLeave() }"/>
+    <NuxtPage :transition="{ name: 'page', mode: 'out-in', onBeforeLeave: (el) =>  onBeforeLeave(el), onAfterEnter: (el) => onAfterEnter(el) }"/>
   </NuxtLayout>
 </template>
 <script>
 export default {
   methods: {
-    onAfterLeave() {
-      console.log(123123)
+    onBeforeLeave(el) {
+      console.log( el)
+      useMain().SET_TRANSITION_PAGE(true)
+      console.log( Date.now(), '1')
+    },
+    onAfterEnter(el) {
+      console.log( el)
+      console.log(Date.now(), '2')
+      useMain().SET_TRANSITION_PAGE(false)
     }
   }
 }

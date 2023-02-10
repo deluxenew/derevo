@@ -6,7 +6,7 @@ export default defineNuxtConfig({
         '@nuxtjs/tailwindcss',
         ['@pinia/nuxt', {
             autoImports: [
-                'defineStore',
+                'defineStore', 'acceptHMRUpdate'
             ],
         },
         ],
@@ -14,6 +14,12 @@ export default defineNuxtConfig({
     tailwindcss: {
         cssPath: '~/assets/css/input.css'
     },
+    imports: {
+        dirs: ["composables/storeModules", "composables/http"]
+    },
+    dirs: [
+        './store'
+    ],
     alias: {
         'images': fileURLToPath(new URL('./assets/images', import.meta.url)),
         'style': fileURLToPath(new URL('./assets/style', import.meta.url)),

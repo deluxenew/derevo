@@ -1,9 +1,8 @@
 <script setup>
 import {onMounted} from 'vue'
 import {Carousel} from 'flowbite'
-
-onMounted(async () => {
-  await new Promise((resolve) => setTimeout(() => resolve(),200))
+const initCarousel = () => {
+  console.log(12312)
   const items = [
     {
       position: 0,
@@ -73,6 +72,15 @@ onMounted(async () => {
       carousel.next();
     });
   }
+}
+watch(() => useMain().IS_TRANSITION_PAGE, (v) => {
+  if (v) return
+  initCarousel()
+})
+
+onMounted(() => {
+  if (useMain().IS_TRANSITION_PAGE) return
+  initCarousel()
 })
 </script>
 
