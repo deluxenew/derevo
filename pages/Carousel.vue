@@ -1,6 +1,7 @@
 <script setup>
 import {onMounted} from 'vue'
 import {Carousel} from 'flowbite'
+
 const initCarousel = () => {
   console.log('initCarousel')
   const items = [
@@ -91,30 +92,29 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="max-w-2xl p-4 mx-auto">
+  <div class="">
     <div class="relative">
       <!-- Carousel wrapper -->
       <div class="relative h-56 overflow-hidden rounded-lg sm:h-64 xl:h-80 2xl:h-96">
         <!-- Item 1 -->
         <div id="carousel-item-1" class="hidden duration-700 ease-in-out">
-          <span
-              class="absolute text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 sm:text-3xl dark:text-gray-800">First Slide</span>
-          <img src="https://flowbite.com/docs/images/carousel/carousel-1.svg"
+
+          <img src="/1.jpg"
                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 2 -->
-        <div id="carousel-item-2" class="hidden duration-700 ease-in-out">
-          <img src="https://flowbite.com/docs/images/carousel/carousel-2.svg"
+        <div id="carousel-item-2" class="duration-700 ease-in-out">
+          <img src="/carousel-2.svg"
                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 3 -->
         <div id="carousel-item-3" class="hidden duration-700 ease-in-out">
-          <img src="https://flowbite.com/docs/images/carousel/carousel-3.svg"
+          <img src="/carousel-3.svg"
                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
         <!-- Item 4 -->
         <div id="carousel-item-4" class="hidden duration-700 ease-in-out">
-          <img src="https://flowbite.com/docs/images/carousel/carousel-4.svg"
+          <img src="/carousel-4.svg"
                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
         </div>
       </div>

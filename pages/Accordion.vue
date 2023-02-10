@@ -6,9 +6,9 @@ onMounted(() => {
     // create an array of objects with the id, trigger element (eg. button), and the content element
     const accordionItems = [
         {
-            id: 'accordion-example-heading-1',
-            triggerEl: document.querySelector('#accordion-example-heading-1'),
-            targetEl: document.querySelector('#accordion-example-body-1'),
+            id: 'accordion-example-heading-1.jpg',
+            triggerEl: document.querySelector('#accordion-example-heading-1.jpg'),
+            targetEl: document.querySelector('#accordion-example-body-1.jpg'),
             active: true
         },
         {
@@ -42,7 +42,7 @@ onMounted(() => {
             console.log(item);
         },
     };
-    if (document.querySelector('#accordion-example-heading-1')) {
+    if (document.querySelector('#accordion-example-heading-1.jpg')) {
         /*
         * accordionItems: array of accordion item objects
         * options: optional
