@@ -1,6 +1,6 @@
 <script setup>
-import {onMounted} from 'vue'
-import {Carousel} from 'flowbite'
+import { onMounted } from 'vue'
+import { Carousel } from 'flowbite'
 
 const initCarousel = () => {
   const elements = ["item", "indicator"].reduce((acc, it) => {
@@ -29,13 +29,13 @@ const initCarousel = () => {
 
     // callback functions
     onNext: () => {
-      console.log('next slider item is shown');
+      // console.log('next slider item is shown');
     },
     onPrev: () => {
-      console.log('previous slider item is shown');
+      // console.log('previous slider item is shown');
     },
     onChange: () => {
-      console.log('new slider item has been shown');
+      // console.log('new slider item has been shown');
     }
   };
   if (document.getElementById('carousel-item-1')) {
@@ -53,17 +53,13 @@ const initCarousel = () => {
   }
 }
 
-const props = defineProps({
-  isTransitionPage: false
-})
-
-watch(() => props.isTransitionPage, (v) => {
+watch(() => useMain().IS_TRANSITION_PAGE, (v) => {
   if (v) return
   initCarousel()
 })
 
 onMounted(() => {
-  if (props.isTransitionPage) return
+  if (useMain().IS_TRANSITION_PAGE) return
   initCarousel()
 })
 

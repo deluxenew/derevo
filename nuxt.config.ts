@@ -1,7 +1,16 @@
 import {fileURLToPath} from 'node:url'
 
 export default defineNuxtConfig({
-    app: {},
+    app: {
+        pageTransition: {
+            name: 'page',
+            mode: 'out-in',
+        },
+        layoutTransition: {
+            name: 'layout',
+            mode: 'out-in',
+        }
+    },
     modules: [
         '@nuxtjs/tailwindcss',
         ['@pinia/nuxt', {

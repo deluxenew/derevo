@@ -1,7 +1,8 @@
 <template>
   <header ref="header" :style="styles" class="relative w-full">
-    <div class="w-full bg-white p-4" :class="classes">
-      {{ classes }}
+    <div class="w-full bg-white p-4 h-48" :class="classes">
+     <button class="bg-[#1da1f2]" @click="setPageLayout('default')">default</button>
+     <button class="bg-[#1da1f2]" @click="setPageLayout('mobile')">mobile</button>
     </div>
   </header>
 </template>

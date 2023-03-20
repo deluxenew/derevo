@@ -1,29 +1,30 @@
 <template>
-  <NuxtLayout>
-    <NuxtPage :isTransitionPage="IS_TRANSITION_PAGE" :transition="transition"/>
-  </NuxtLayout>
+  <transition v-bind="transitionLayout">
+    <NuxtLayout>
+      <NuxtPage :transition="transitionPage"/>
+    </NuxtLayout>
+  </transition>
 </template>
 <script>
 export default {
   computed: {
-    ...mapGetters(useMain, ["IS_TRANSITION_PAGE"]),
-    transition() {
+    transitionLayout() {
+      return {
+        onBeforeLeave: () => this.SET_TRANSITION_LAYOUT(true),
+        onBeforeEnter: () => this.SET_TRANSITION_LAYOUT(false)
+      }
+    },
+    transitionPage() {
       return {
         name: 'page',
         mode: 'out-in',
-        onBeforeLeave: (el) => this.onBeforeLeave(el),
-        onBeforeEnter: (el) => this.onAfterEnter(el)
+        onBeforeLeave: () => this.SET_TRANSITION_PAGE(true),
+        onBeforeEnter: () => this.SET_TRANSITION_PAGE(false)
       }
     }
   },
   methods: {
-    ...mapActions(useMain, ["SET_TRANSITION_PAGE"]),
-    onBeforeLeave(el) {
-      this.SET_TRANSITION_PAGE(true)
-    },
-    onAfterEnter(el) {
-      this.SET_TRANSITION_PAGE(false)
-    }
+    ...mapActions(useMain, ["SET_TRANSITION_PAGE", "SET_TRANSITION_LAYOUT"]),
   }
 }
 </script>
@@ -35,6 +36,17 @@ export default {
 
 .page-enter-from,
 .page-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
+}
+
+.layout-enter-active,
+.layout-leave-active {
+  transition: all 0.3s;
+}
+
+.layout-enter-from,
+.layout-leave-to {
   opacity: 0;
   filter: blur(1rem);
 }

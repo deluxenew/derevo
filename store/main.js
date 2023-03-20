@@ -3,7 +3,8 @@ import { actions } from "./actions"
 export const useMain = defineStore('main', {
     state: () => {
         return {
-            isTransitionPage: false
+            isTransitionPage: false,
+            isTransitionLayout: false
         }
     },
     actions,
