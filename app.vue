@@ -10,14 +10,11 @@ export default {
   computed: {
     transitionLayout() {
       return {
-        onBeforeLeave: () => this.SET_TRANSITION_LAYOUT(true),
         onBeforeEnter: () => this.SET_TRANSITION_LAYOUT(false)
       }
     },
     transitionPage() {
       return {
-        name: 'page',
-        mode: 'out-in',
         onBeforeLeave: () => this.SET_TRANSITION_PAGE(true),
         onBeforeEnter: () => this.SET_TRANSITION_PAGE(false)
       }
