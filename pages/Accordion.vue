@@ -1,8 +1,8 @@
 <script setup>
 import { onMounted } from 'vue'
-import { Accordion } from 'flowbite'
+import {Accordion, initAccordions} from 'flowbite'
 
-onMounted(() => {
+const initAccordion = () => {
     // create an array of objects with the id, trigger element (eg. button), and the content element
     const accordionItems = [
         {
@@ -51,6 +51,16 @@ onMounted(() => {
         // open accordion item based on id
         accordion.open('accordion-example-heading-2');
     }
+}
+
+watch(() => useMain().IS_TRANSITION_PAGE, (v) => {
+    if (v) return
+    initAccordion()
+})
+
+onMounted(() => {
+    initAccordions();
+    initAccordion()
 })
 </script>
 

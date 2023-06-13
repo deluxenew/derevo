@@ -1,11 +1,12 @@
 import {fileURLToPath} from 'node:url'
 
 export default defineNuxtConfig({
+    theme: "",
     app: {
-        pageTransition: {
-            name: 'page',
-            mode: 'out-in',
-        },
+        // pageTransition: {
+        //     name: 'page',
+        //     mode: 'out-in',
+        // },
         layoutTransition: {
             name: 'layout',
             mode: 'out-in',
@@ -24,7 +25,7 @@ export default defineNuxtConfig({
         cssPath: '~/assets/css/input.css'
     },
     imports: {
-        dirs: ["composables/storeModules", "composables/http"]
+        dirs: ["composables/storeModules"]
     },
     dirs: [
         './store'

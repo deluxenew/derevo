@@ -4,7 +4,9 @@ export const useMain = defineStore('main', {
     state: () => {
         return {
             isTransitionPage: false,
-            isTransitionLayout: false
+            isTransitionLayout: false,
+            counter: 0,
+            layoutName: "default"
         }
     },
     actions,

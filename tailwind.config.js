@@ -6,7 +6,7 @@ module.exports = {
     "./widgets/*.vue",
     "./plugins/**/*.{js,ts}",
     "./nuxt.config.{js,ts}",
-    "./node_modules/flowbite/**/*.js",
+    "./node_modules/flowbite/**/*.{ts,js}",
   ],
   theme: {
     extend: {
