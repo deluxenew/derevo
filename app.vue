@@ -7,7 +7,7 @@
 </template>
 <script>
 
-import {initFlowbite, initAccordions} from 'flowbite'
+import {initFlowbite} from 'flowbite'
 
 export default {
     computed: {
@@ -41,7 +41,7 @@ export default {
 <style>
 .page-enter-active,
 .page-leave-active {
-    transition: all 1.15s;
+    transition: all 0.15s;
 }
 
 .page-enter-from,

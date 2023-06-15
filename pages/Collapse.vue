@@ -2,7 +2,7 @@
 import {onMounted, ref} from 'vue'
 import {Collapse} from 'flowbite'
 const isVisible = ref(false)
-const initCollapce = () => {
+onMounted(() => {
     // set the target element that will be collapsed or expanded (eg. navbar menu)
     const $targetEl = document.getElementById('targetEl');
     // optionally set a trigger element (eg. a button, hamburger icon)
@@ -13,11 +13,9 @@ const initCollapce = () => {
             console.log('element has been collapsed')
         },
         onExpand: (v) => {
-
             console.log('element has been expanded')
         },
         onToggle: (v) => {
-            console.log(v._visible)
             isVisible.value = v._visible
             console.log('element has been toggled')
         }
@@ -28,21 +26,10 @@ const initCollapce = () => {
         * options: optional
         */
         const collapse = new Collapse($targetEl, $triggerEl, options);
-        console.log(collapse)
         // show the target element
         collapse.expand();
     }
     isVisible.value = true
-}
-
-watch(() => useMain().IS_TRANSITION_PAGE, (v) => {
-    if (v) return
-    initCollapce()
-})
-
-onMounted(() => {
-    if (useMain().IS_TRANSITION_PAGE) return
-    initCollapce()
 })
 </script>
 

@@ -28,7 +28,7 @@ export default {
 
         },
         someErrorLogger() {
-            console.log(3132)
+
         }
     },
     computed: {
@@ -44,7 +44,6 @@ export default {
         }
     },
     mounted() {
-        console.log('load')
         const headers = useRequestHeaders(['cookie'])
         console.log(headers)
     }

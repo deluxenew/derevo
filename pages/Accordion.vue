@@ -1,14 +1,14 @@
 <script setup>
 import { onMounted } from 'vue'
-import {Accordion, initAccordions} from 'flowbite'
+import { Accordion } from 'flowbite'
 
-const initAccordion = () => {
+onMounted(() => {
     // create an array of objects with the id, trigger element (eg. button), and the content element
     const accordionItems = [
         {
-            id: 'accordion-example-heading-1.jpg',
-            triggerEl: document.querySelector('#accordion-example-heading-1.jpg'),
-            targetEl: document.querySelector('#accordion-example-body-1.jpg'),
+            id: 'accordion-example-heading-1',
+            triggerEl: document.querySelector('#accordion-example-heading-1'),
+            targetEl: document.querySelector('#accordion-example-body-1'),
             active: true
         },
         {
@@ -42,7 +42,7 @@ const initAccordion = () => {
             console.log(item);
         },
     };
-    if (document.querySelector('#accordion-example-heading-1.jpg')) {
+    if (document.querySelector('#accordion-example-heading-1')) {
         /*
         * accordionItems: array of accordion item objects
         * options: optional
@@ -51,16 +51,6 @@ const initAccordion = () => {
         // open accordion item based on id
         accordion.open('accordion-example-heading-2');
     }
-}
-
-watch(() => useMain().IS_TRANSITION_PAGE, (v) => {
-    if (v) return
-    initAccordion()
-})
-
-onMounted(() => {
-    initAccordions();
-    initAccordion()
 })
 </script>
 
