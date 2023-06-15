@@ -13,6 +13,7 @@ export default defineNuxtConfig({
         }
     },
     modules: [
+        'header-module',
         '@nuxtjs/tailwindcss',
         ['@pinia/nuxt', {
             autoImports: [
